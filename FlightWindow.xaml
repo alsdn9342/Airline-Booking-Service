@@ -1,0 +1,93 @@
+﻿<Window x:Class="Midterm_MinWooPark.FlightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Midterm_MinWooPark"
+        mc:Ignorable="d"
+        Title="FlightWindow" Height="556" Width="800" Background="#FF4A80F3">
+    <Grid Background="#FF4A80F3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="417"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="414"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File" Height="32" Width="60" FontSize="18">
+                    <MenuItem x:Name="new" Header="_New"/>
+                    <MenuItem x:Name="save" Header="_Save"/>
+                    <MenuItem x:Name="quit" Header="_Quit" Click="quit_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Edit" Height="32" Width="60" FontSize="18">
+                    <MenuItem x:Name="insertMenuBar" Header="_Insert" Click="insertMenuBar_Click"/>
+                    <MenuItem x:Name="updateMenuBar" Header="_Update" Click="updateMenuBar_Click"/>
+                    <MenuItem x:Name="deleteMenuBar" Header="_Delete" Click="deleteMenuBar_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="helpMenuBar" Header="_Help" Height="32" Width="60" FontSize="18" Click="helpMenuBar_Click">
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+        <StackPanel Grid.Column="0" Margin="10,50,10,89">
+            <ListBox x:Name="lstFlight"
+                     HorizontalContentAlignment="Stretch"
+                     ItemsSource="{Binding}" SelectionChanged="lstFlight_SelectionChanged" Height="256" RenderTransformOrigin="0.5,0.5"
+                     >
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="1.595"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="2.047"/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <DataGrid Height="275"/>
+        </StackPanel>
+        <Button Content="Right-click me!" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Width="186" Height="26" FontSize="18" Grid.ColumnSpan="2" Margin="396,80,0,0" Grid.Row="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-280" Y="-80"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="addContext" Header="Add" Click="addContext_Click" />
+                    <MenuItem x:Name="updateContext" Header="Update" Click="updateContext_Click" />
+                    <Separator />
+                    <MenuItem x:Name="deleteContext" Header="Delete" Click="deleteContext_Click" />
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <StackPanel Grid.Column="1" Margin="0,67,20,111" Grid.RowSpan="2">
+            <Label Content="Departure City:" FontSize="16"/>
+            <TextBox x:Name="tbDepartureCity" Height="36"></TextBox>
+            <Label Content="Destination City:" FontSize="16"/>
+            <TextBox x:Name="tbDestinationCity" Height="36"></TextBox>
+            <Label Content="Departure Date :" FontSize="16"/>
+            <TextBox x:Name="tbDepartureDate" Height="36"></TextBox>
+            <Label Content="Flight Time:" FontSize="16"/>
+            <TextBox x:Name="tbFlightTimee" Height="36"/>
+            <Label Content="Airline:" FontSize="16"/>
+            <TextBox x:Name="tbAirline" Height="36"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="23,10,43,2" Grid.Row="1">
+            <Button x:Name="btnAdd" Content="Add New" Click="btnAdd_Click" Margin="0,10,0,0" Height="20"/>
+            <Button x:Name="btnUpdate" Content="Update" Click="btnUpdate_Click" Margin="0,10,0,0" Height="20"/>
+            <Button x:Name="btnDelete" Content="Delete" Click="btnDelete_Click" Margin="0,10,0,0" Height="20"/>
+        </StackPanel>
+        <RadioButton x:Name="canadaAir" Content="Canada Air" Grid.Column="1" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" FontSize="16" Height="20" Width="96"/>
+        <RadioButton x:Name="unitedAir" Content="United Air" Grid.Column="1" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" FontSize="16" Height="20" Width="90"/>
+        <RadioButton x:Name="koreaAir" Content="Korea Air" Grid.Column="1" HorizontalAlignment="Left" Margin="130,50,0,0" VerticalAlignment="Top" FontSize="16" Height="20" Width="83"/>
+        <RadioButton x:Name="torontoAir" Content="Toronto Air" Grid.Column="1" HorizontalAlignment="Left" Margin="130,23,0,0" VerticalAlignment="Top" FontSize="16" Height="20" Width="98"/>
+
+    </Grid>
+</Window>

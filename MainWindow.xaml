@@ -1,0 +1,20 @@
+﻿<Window x:Class="Midterm_MinWooPark.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Midterm_MinWooPark"
+        mc:Ignorable="d"
+        Title="MainHome" Height="450" Width="800">
+    <StackPanel>
+       
+            <StackPanel>
+            <Button x:Name="viewCustomers" Content="View Customers" Width="436" Height="61" Margin="0,30,0,0" FontSize="20" Background="#FF97AAEE" FontWeight="Bold" Click="viewCustomers_Click"/>
+            <Button x:Name="viewFlight" Content="View Flights" Width="436" Height="61" Margin="0,30,0,0" FontSize="20" Background="#FF9EEC41" FontWeight="Bold" Click="viewFlight_Click"/>
+            <Button x:Name="viewAirlines" Content="View Airlines" Width="436" Height="61" Margin="0,30,0,0" FontSize="20" Background="#FFE4E460" FontWeight="Bold" Click="viewAirlines_Click"/>
+            <Button x:Name="viewPassengers" Content="View Passengers" Width="436" Height="61" Margin="0,30,0,0" FontSize="20" Background="#FFE65AD3" FontWeight="Bold" Click="viewPassengers_Click"/>
+        </StackPanel>
+        
+    </StackPanel>
+        
+</Window>
